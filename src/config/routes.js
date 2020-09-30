@@ -1,10 +1,8 @@
 import { Router } from 'express'
+import { pages } from '@controllers'
 
 const Routes = Router()
 
-Routes.get('/', (req, res) => {
-	res.end ('Hello, Worlds..!')
-})
-
+Routes.get('/', pages.index)
 
 export { Routes }
