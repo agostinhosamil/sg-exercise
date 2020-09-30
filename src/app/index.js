@@ -1,5 +1,7 @@
 import express from 'express'
+import expressReactViews from 'express-react-views'
 
+import config from '@config'
 import { Routes } from '@routes'
 
 const coreApplication = express()
@@ -7,6 +9,7 @@ const coreApplication = express()
 export class Application {
 	constructor () {
 		this.drawRoutes()
+		this.setUpViewEngine()
 	}
 
 	get express () {
@@ -15,6 +18,14 @@ export class Application {
 
 	drawRoutes () {
 		this.express.use('/', Routes)
+	}
+
+	setUpViewEngine () {
+		this.express.set('views', __dirname + '/views');
+		this.express.set('view engine', 'jsx');
+		this.express.engine('jsx', 
+			expressReactViews.createEngine( config.viewEngine )
+		);
 	}
 }
 
