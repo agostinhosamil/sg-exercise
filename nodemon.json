@@ -1,0 +1,15 @@
+{
+	"verbose": true,
+	"watch": [
+		"src", "package.json"
+	],
+
+	"ignore": [ "src/config/constructors" ],
+
+	"extensions": "js, json",
+
+	"execMap": {
+		"js": "sucrase-node",
+		"json": "re-config"
+	}
+}
