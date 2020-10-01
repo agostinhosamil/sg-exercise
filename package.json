@@ -15,7 +15,6 @@
       "beautify": true
     }
   },
-  "@name": "Sam",
   "@StartUpMessage": "My Server is running..!",
   "APP_API_SECRET_KEY": "2283ujijs",
   "_moduleAliases": {
