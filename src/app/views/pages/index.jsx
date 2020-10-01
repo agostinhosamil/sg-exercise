@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import Root from '@layouts'
 
+import styled from 'styled-components'
+
+const Text = styled.h1`
+	color: red
+`
+
 export default () => {
 	const [ name, setName ] = useState('Sam')
 
@@ -11,7 +17,7 @@ export default () => {
 	return (
 		<Root title="Home">
 			<input onChange={ handleNameChange } /><br />
-			<h1>Hello, World..!</h1> 
+			<Text>Hello, World..! { name.toLowerCase() } </Text>
 			<br />
 			<span>
 				I am { name }
