@@ -25,7 +25,9 @@
     "@config": "./src/config",
     "@routes": "./src/config/routes.js",
     "@controllers": "./src/app/controllers",
-    "@models": "./src/app/models"
+    "@models": "./src/app/models",
+    "@views": "./src/app/views",
+    "@layouts": "./src/app/views/layouts"
   },
   "_moduleAliasIgnoreWarning": true,
   "devDependencies": {
