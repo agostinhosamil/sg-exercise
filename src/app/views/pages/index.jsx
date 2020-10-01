@@ -10,7 +10,7 @@ export default ({ users: defaultUsersList }) => {
 
 	const handleClick = () => {
 
-		setUsers ([ ...users, { 
+		setUsers ([ ...users, {
 			name: userNameRef.current.value, 
 			id: users.length 
 		}])
