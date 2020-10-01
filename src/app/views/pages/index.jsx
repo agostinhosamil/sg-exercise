@@ -11,7 +11,8 @@ export default () => {
 	return (
 		<Root title="Home">
 			<input onChange={ handleNameChange } /><br />
-			<h1>Hello, Worlsddd..!</h1> <br />
+			<h1>Hello, World..!</h1> 
+			<br />
 			<span>
 				I am { name }
 			</span>
