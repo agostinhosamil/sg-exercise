@@ -1,5 +1,10 @@
+import { User } from '@models'
+
 export default class pagesController {
-	index (req, res) {
-		res.render ('pages/index')
+	async index (req, res) {
+
+		const users = await User.all()
+
+		res.render ('pages/index', { users })
 	}
 }

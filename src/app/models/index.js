@@ -5,17 +5,17 @@ const dirFiles = fs.readdirSync(__dirname)
 
 for (let i = 0; i < dirFiles.length; i++) {
 	if (dirFiles [ i ] !== 'index.js') {
-		let controllerName = dirFiles[ i ].replace (
+		let modelName = dirFiles[ i ].replace (
 			/\.js$/i, ''
 		)
-		let controllerCore = require (
+		let modelCore = require (
 			path.resolve( __dirname, dirFiles[ i ] )
 		)
 		
-		exports[ controllerName ] = (
-			// Instance of the controller 
+		exports[ modelName ] = (
+			// Instance of the model 
 			// core class inside its file
-			new controllerCore.default
+			new modelCore.default
 		)
 	}
 }

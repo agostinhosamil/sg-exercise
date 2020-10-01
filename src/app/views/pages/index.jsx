@@ -1,27 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Root from '@layouts'
 
-import styled from 'styled-components'
+export default ({ users: defaultUsersList }) => {
+	const [ users, setUsers ] = useState (
+		defaultUsersList
+	)
 
-const Text = styled.h1`
-	color: red
-`
+	const userNameRef = useRef()
 
-export default () => {
-	const [ name, setName ] = useState('Sam')
+	const handleClick = () => {
 
-	const handleNameChange = ({ target }) => {
-		setName (target.value)
+		setUsers ([ ...users, { 
+			name: userNameRef.current.value, 
+			id: users.length 
+		}])
+
+		userNameRef.current.value = ''
 	}
-	
+
 	return (
 		<Root title="Home">
-			<input onChange={ handleNameChange } /><br />
-			<Text>Hello, World..! { name.toLowerCase() } </Text>
+			<input ref={ userNameRef } type="text" />
 			<br />
-			<span>
-				I am { name }
-			</span>
+			<button onClick={ handleClick }>
+				Save User
+			</button>
+			<ul>
+				{ users.map (user => <li key={ user.id }>{ user.name }</li>) }
+			</ul>
 		</Root>
 	)
 }
