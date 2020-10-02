@@ -1,5 +1,7 @@
-export default class User {
-	static async all () {
+import { Model } from 'sequelize'
+
+export default class User extends Model {
+	static async getall () {
 		const users = [
 			{ id: 0, name: 'Sam' },
 			{ id: 1, name: 'Agostinho' },

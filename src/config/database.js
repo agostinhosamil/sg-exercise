@@ -1,6 +1,10 @@
-import path from 'path'
+const path = require ('path')
 
-export default {
+module.exports = {
 	dialect: 'sqlite',
-	storage: path.resolve (__dirname, '..', 'database', 'developent.sqlite')
+	storage: path.resolve (__dirname, '..', 'database', 'development.sqlite'),
+
+	define: {
+		timestamps: true
+	}
 }

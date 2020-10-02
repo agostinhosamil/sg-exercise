@@ -21,6 +21,7 @@
     "~r": ".",
     "@app": "./src/app",
     "@config": "./src/config",
+    "@database": "./src/database",
     "@routes": "./src/config/routes.js",
     "@controllers": "./src/app/controllers",
     "@models": "./src/app/models",
