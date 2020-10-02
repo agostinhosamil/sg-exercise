@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import Root from '@layouts'
 
 export default ({ users: defaultUsersList }) => {
 	const [ users, setUsers ] = useState (
@@ -18,9 +17,17 @@ export default ({ users: defaultUsersList }) => {
 		userNameRef.current.value = ''
 	}
 
+	const handleInputPress = (e) => {
+		const { keyCode } = e
+
+		if (13 == keyCode) {
+			handleClick()
+		}
+	}
+
 	return (
-		<Root title="Home">
-			<input ref={ userNameRef } type="text" />
+		<>
+			<input ref={ userNameRef } onKeyUp={ handleInputPress } type="text" />
 			<br />
 			<button onClick={ handleClick }>
 				Save User
@@ -28,6 +35,6 @@ export default ({ users: defaultUsersList }) => {
 			<ul>
 				{ users.map (user => <li key={ user.id }>{ user.name }</li>) }
 			</ul>
-		</Root>
+		</>
 	)
 }

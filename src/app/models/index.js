@@ -1,4 +1,4 @@
-import * as path from 'path'
+import path from 'path'
 import * as fs from 'fs'
 
 const dirFiles = fs.readdirSync(__dirname)
@@ -8,7 +8,7 @@ import dataBaseConfig from '@config/database'
 for (let i = 0; i < dirFiles.length; i++) {
 	if (dirFiles [ i ] !== 'index.js') {
 		let modelName = dirFiles[ i ].replace (
-			/\.js$/i, ''
+			/\s+\.js$/i, ''
 		)
 		let modelCore = require (
 			path.resolve( __dirname, dirFiles[ i ] )
@@ -17,7 +17,7 @@ for (let i = 0; i < dirFiles.length; i++) {
 		exports[ modelName ] = (
 			// Instance of the model 
 			// core class inside its file
-			new modelCore.default
+			modelCore.default
 		)
 	}
 }

@@ -1,5 +1,5 @@
 export default class User {
-	async all () {
+	static async all () {
 		const users = [
 			{ id: 0, name: 'Sam' },
 			{ id: 1, name: 'Agostinho' },
