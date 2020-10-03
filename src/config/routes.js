@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import { pages } from '@controllers'
+import { pages, users } from '@controllers'
 
 const Routes = Router()
 
 Routes.get('/', pages.index)
+Routes.post('/users', users.create)
 
 export { Routes }
