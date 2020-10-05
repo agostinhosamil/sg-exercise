@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import User from './_user'
-import UserForm from './_userForm'
+import User from '@components/User'
+import UserForm from '@components/UserForm'
 
 export default ({ users }) => {
 	return (

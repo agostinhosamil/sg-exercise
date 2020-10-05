@@ -5,10 +5,10 @@ export default () => (
 		<h1>New user</h1>
 
 		<label>Name&nbsp;</label>
-		<input name="name" type="text" />
+		<input name="user[name]" type="text" />
 		<br />
 		<label>Email&nbsp;</label>
-		<input name="email" type="email" />
+		<input name="user[email]" type="email" />
 		<br />
 		<br />
 		<input value="Save User" type="submit" />

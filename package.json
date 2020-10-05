@@ -26,7 +26,8 @@
     "@controllers": "./src/app/controllers",
     "@models": "./src/app/models",
     "@views": "./src/app/views",
-    "@layouts": "./src/app/views/layouts"
+    "@layouts": "./src/app/views/layouts",
+    "@components": "./src/app/views/components"
   },
   "_moduleAliasIgnoreWarning": true,
   "devDependencies": {
@@ -39,6 +40,8 @@
   "dependencies": {
     "@react-ssr/core": "^0.24.0",
     "@react-ssr/express": "^0.24.0",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "react": "^16.13.1",
