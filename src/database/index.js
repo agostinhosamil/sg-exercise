@@ -8,8 +8,10 @@ const sequelize = new Sequelize (
 
 sequelize.authenticate().then(() => {
 	console.log ('Database connected..!')
-}).catch(() => {
-	console.log ('Error while connecting to the database..!')
+}).catch(error => {
+	console.log (
+		`Error while connecting to the database..! \n ${ error }`
+	)
 })
 
 export default sequelize
