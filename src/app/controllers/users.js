@@ -6,7 +6,7 @@ export default class usersController {
 
 		const createUser = await User.create (user)
 
-		if (createUser) {
+		if ( createUser ) {
 			res.redirect ('/')
 		}
 	}

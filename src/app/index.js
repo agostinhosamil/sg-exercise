@@ -1,5 +1,6 @@
-import express from 'express'
 import bodyParser from 'body-parser'
+import express from 'express'
+import path from 'path'
 
 import config from '@config'
 import { Routes } from '@routes'
@@ -19,6 +20,9 @@ export class Application {
 	middlewares () {
 		this.express.use(bodyParser.json())
 		this.express.use(bodyParser.urlencoded())
+		this.express.use(this.express.static(
+			path.resolve (__dirname, '..', '..', 'public')
+		))
 	}
 
 	drawRoutes () {
