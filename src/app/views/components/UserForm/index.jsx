@@ -1,17 +1,30 @@
 import React from 'react'
 
-export default () => (
-	<form action="/users" method="post">
-		<h1>New user</h1>
+import { useFormProps } from '@components/formProps'
+import { Container, Title, Label, Input, OptionButton } from './styles'
 
-		<label>Name&nbsp;</label>
-		<input name="user[name]" type="text" />
-		<br />
-		<label>Email&nbsp;</label>
-		<input name="user[email]" type="email" />
-		<br />
-		<br />
-		<input value="Save User" type="submit" />
-		<br />
-	</form>
-)
+export default (props) => {
+
+	const { handleUserFormHide } = useFormProps()
+
+	return (
+		<Container>
+			<form action="/users" method="post">
+				<Title>New user</Title>
+
+				<Label>Name</Label>
+				<Input name="user[name]" type="text" />
+				<br />
+				<Label>Email</Label>
+				<Input name="user[email]" type="email" />
+				<br />
+				<br />
+				<Input value="Save User" type="submit" /> 
+				<OptionButton onClick={ handleUserFormHide } href="#">
+					Cancelar
+				</OptionButton>
+				<br />
+			</form>
+		</Container>
+	)
+}

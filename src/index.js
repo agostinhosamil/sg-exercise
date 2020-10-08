@@ -1,4 +1,4 @@
-import { App, core } from '@app'
+import { core } from '@app'
 
 import register from '@react-ssr/express/register'
 import config from '@config'

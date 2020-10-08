@@ -20,7 +20,7 @@ export class Application {
 	middlewares () {
 		this.express.use(bodyParser.json())
 		this.express.use(bodyParser.urlencoded())
-		this.express.use(this.express.static(
+		this.express.use(express.static(
 			path.resolve (__dirname, '..', '..', 'public')
 		))
 	}

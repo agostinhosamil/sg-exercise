@@ -1,7 +1,7 @@
 const path = require ('path')
 
 module.exports = {
-  id: 'default',
+  id: 'styled-components',
   distDir: 'src/app/views/.ssr',
   viewsDir: 'src/app/views',
   staticViews: [],
